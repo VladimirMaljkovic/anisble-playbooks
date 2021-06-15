@@ -1,0 +1,34 @@
+---
+- hosts: all
+
+  vars:
+    mysql_root_password: password
+
+  tasks:
+    - name: install mysql
+      apt: name=mysql update_cache=yes cache_valid_time=3600 state=present
+
+    - name: start up the mysql service
+      shell: "service mysql start"
+
+    - name: ensure that mysql runs on startup
+      service: name=mysql state=started enabled=true
+
+    - name: update mysql root pass for all root accs
+      mysql_user:
+        name: root
+        host: "{{ item }}"
+        password: "{{ mysql_root_password }}"
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+        check_implicit_admin: yes
+        priv: "*.*:ALL,GRANT"
+    
+    - name: create a new database
+      mysql_db: name=testdb state=present login_user=root login_password="{{ mysql_root_password }}"
+    
+    - name: add sample data to db
+      copy: src=dump.sql dest=/tmp/dump.sql
+
+    - name: insert sample data into database
+      mysql_db: name=testdb state=import target=/tmp/dump.sql login_user=root login_password="{{ mysql_root_password }}"
