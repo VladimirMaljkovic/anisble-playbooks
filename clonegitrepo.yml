@@ -1,6 +1,8 @@
 ---
 - name: clone thing
   hosts: all
+  become: true
+  become_user: true
 
   tasks:
   - name: Clone a private repository into /opt.
