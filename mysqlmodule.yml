@@ -11,7 +11,7 @@
     apt: name=libmysqlclient-dev state=present
 
   - name: Install python mysql module
-    pip: name=MYSQL-python
+    pip: name=MySQL-python
 
   - name: Create database user
     mysql_user: user=vladimir password=nokiaE71 priv=*.*:ALL state=present
