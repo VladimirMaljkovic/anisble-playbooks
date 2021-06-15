@@ -11,7 +11,8 @@
     apt: name=libmysqlclient-dev state=present
 
   - name: Install python mysql module
-    pip: name=MySQL-python
+    # pip: name=MySQL-python   this one doesnt support pyhton3
+    pip: mysqlclient
 
   - name: Create database user
     mysql_user: user=vladimir password=nokiaE71 priv=*.*:ALL state=present
