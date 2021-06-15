@@ -11,8 +11,6 @@
       package: name=libapache2-mod-php state=present
     - name: "Install php-cli"
       package: name=php-cli state=present
-    - name: "Install php-mcrypt"
-      package: name=php-mcrypt state=present
     - name: "Install php-gd"
       package: name=php-gd state=present
     - name: "Install php-mysql"
