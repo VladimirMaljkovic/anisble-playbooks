@@ -6,8 +6,4 @@
 
   tasks:
   - name: Clone a private repository into /opt.
-    git:
-      repo: https://github.com/VladimirMaljkovic/php1cas
-      version: master
-      dest: /var/www/html/php1cas
-      accept_hostkey: yes
+    shell: cd /var/www/html & git clone https://github.com/VladimirMaljkovic/php1cas.git
