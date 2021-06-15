@@ -7,5 +7,5 @@
     git:
       repo: https://github.com/VladimirMaljkovic/php1cas
       version: master
-      dest: /var/www/html
+      dest: /var/www/html/php1cas
       accept_hostkey: yes
