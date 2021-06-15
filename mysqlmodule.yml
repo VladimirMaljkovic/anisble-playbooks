@@ -4,15 +4,15 @@
   become_user: root
 
   tasks:
-  - name: Install 'pip3'
-    apt: name=python3-pip state=present
+  - name: Install 'pip'
+    apt: name=python-pip state=present
 
   - name: Install 'libmysqlclient-dev'
     apt: name=libmysqlclient-dev state=present
 
   - name: Install python mysql module
-    # pip: name=MySQL-python   this one doesnt support pyhton3
-    pip: name=mysqlclient
+    pip: name=MySQL-python  # this one doesnt support pyhton3
+    # pip: name=mysqlclient
 
   - name: Create database user
     mysql_user: user=vladimir password=nokiaE71 priv=*.*:ALL state=present
