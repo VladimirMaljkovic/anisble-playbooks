@@ -9,5 +9,3 @@
       version: master
       dest: /var/www/html
       accept_hostkey: yes
-    # ssh-agent doesn't allow key to pass through remote sudo commands.
-      become: no
