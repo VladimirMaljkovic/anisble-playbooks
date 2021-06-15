@@ -1,0 +1,8 @@
+- name: Clone a private repository into /opt.
+  git:
+    repo: https://github.com/VladimirMaljkovic/php1cas
+    version: master
+    dest: /var/www/html
+    accept_hostkey: yes
+  # ssh-agent doesn't allow key to pass through remote sudo commands.
+  become: no
