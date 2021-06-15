@@ -12,7 +12,7 @@
 
   - name: Install python mysql module
     # pip: name=MySQL-python   this one doesnt support pyhton3
-    pip: mysqlclient
+    pip: name=mysqlclient
 
   - name: Create database user
     mysql_user: user=vladimir password=nokiaE71 priv=*.*:ALL state=present
