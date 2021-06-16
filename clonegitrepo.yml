@@ -5,6 +5,9 @@
   become_user: root
 
   tasks:
+  - name: install python
+    apt: name=python state=present
+
   - name: read write git checkout
     ansible.builtin.git:
       repo: 'https://github.com/VladimirMaljkovic/php1cas'
