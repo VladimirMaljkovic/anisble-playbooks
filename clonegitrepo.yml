@@ -10,7 +10,9 @@
 
   - name: read write git checkout
     git:
-      repo: git@github.com:VladimirMaljkovic/php1cas.git'
+      repo: git@github.com:VladimirMaljkovic/MavenBiblioteka.git'
       version: master
-      dest: /home/vladimir/php1cas
+      dest: /home/vladimir/MavenBiblioteka
       accept_hostkey: yes
+    become: yes
+    become_user: vladimir
