@@ -13,4 +13,4 @@
       repo: git@github.com:VladimirMaljkovic/php1cas.git'
       version: master
       dest: /home/vladimir/php1cas
-      accept-hostkey: yes
+      accept_hostkey: yes
