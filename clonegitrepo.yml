@@ -10,7 +10,7 @@
 
   - name: read write git checkout
     git:
-      repo: git@github.com:VladimirMaljkovic/MavenBiblioteka.git'
+      repo: https://github.com/VladimirMaljkovic/MavenBiblioteka.git
       version: master
       dest: /home/vladimir/MavenBiblioteka
       accept_hostkey: yes
