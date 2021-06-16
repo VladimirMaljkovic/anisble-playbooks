@@ -4,6 +4,8 @@
   become: true
   become_user: true
 
-  tasks:
-  - name: Clone a private repository into /opt.
-    shell: cd /var/www/html & git clone https://github.com/VladimirMaljkovic/php1cas.git
+  tasks::
+  - name: read write git checkout
+    ansible.builtin.git:
+      repo: 'https://github.com/VladimirMaljkovic/php1cas'
+      dest: /home/vladimir/php1cas
